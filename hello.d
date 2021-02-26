@@ -11,7 +11,9 @@ int main(string[] args)
     writeln(func.calc(1, 2));
 
     writeln(interop.cpp_func2());
-    //writeln(interop.cpp_func()); // segfault
+
+    auto str = interop.cpp_func();
+    interop.print_string(str);
 
     return 0;
 }
