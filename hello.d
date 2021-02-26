@@ -2,6 +2,7 @@ import std.stdio;
 
 static import func;
 static import interop;
+static import interop2;
 
 int main(string[] args)
 {
@@ -14,6 +15,10 @@ int main(string[] args)
 
     auto str = interop.cpp_func();
     interop.print_string(str);
+
+    int res = 0;
+    interop2.c_function(5, &res);
+    writeln(res);
 
     return 0;
 }
