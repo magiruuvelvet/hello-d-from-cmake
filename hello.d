@@ -68,7 +68,9 @@ int main(string[] args)
     }
     writeln("---");
 
-    const auto a = scoped!(TemplatedClass!string)("hello");
+    alias TemplatedClassStr = TemplatedClass!string;
+
+    const auto a = scoped!TemplatedClassStr("hello");
     writeln(a.getVariable());
     const auto b = scoped!(TemplatedClass!int)(4);
     writeln(b.getVariable());
