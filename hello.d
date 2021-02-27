@@ -59,6 +59,7 @@ int main(string[] args)
         instance2.publicMethod();
         // without explicit delete the destructor is called when main() returns
     }
+    int instance2 = 0; // scope ended, "instance2" varialbe name available again to use with different data type (just like in C++)
     writeln("---");
     {
         // using scoped for stack allocation works
