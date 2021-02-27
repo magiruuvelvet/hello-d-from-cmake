@@ -9,6 +9,8 @@ add_executable(hello
     interop.cpp
     interop2.d
     interop2_c.c
+    Class.d
+    Template.d
 )
 
 # required for module imports
