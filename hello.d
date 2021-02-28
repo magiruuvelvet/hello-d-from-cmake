@@ -1,5 +1,6 @@
 import std.stdio;
 import std.typecons : scoped;
+import fs = std.file;
 
 static import func;
 static import interop;
@@ -25,6 +26,16 @@ import Template;
  * If I ever do a real D project, don't expect that I use dub for this.
  */
 
+void main2(string def = "default value")
+{
+    scope(exit)
+    {
+        writeln("main2 returned, goodby");
+    }
+
+    writeln(def);
+}
+
 int main(string[] args)
 {
     writeln(args[0]);
@@ -40,6 +51,9 @@ int main(string[] args)
     int res = 0;
     interop2.c_function(5, &res);
     writeln(res);
+
+    main2();
+    main2("abc");
 
     writeln("---");
     {
@@ -59,7 +73,7 @@ int main(string[] args)
         instance2.publicMethod();
         // without explicit delete the destructor is called when main() returns
     }
-    int instance2 = 0; // scope ended, "instance2" varialbe name available again to use with different data type (just like in C++)
+    int instance2 = 0; // scope ended, "instance2" variable name available again to use with different data type (just like in C++)
     writeln("---");
     {
         // using scoped for stack allocation works
