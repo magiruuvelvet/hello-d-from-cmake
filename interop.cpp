@@ -20,6 +20,9 @@ public:
         return this->num;
     }
 
+    bool operator== (const CxxClass &other) const
+    { return this->num == other.num; }
+
 private:
     int num = 0;
 };
