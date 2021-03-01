@@ -1,6 +1,38 @@
 #include <cstdio>
 #include <string>
 
+class CxxClass
+{
+public:
+    CxxClass()
+    {}
+
+    ~CxxClass()
+    {}
+
+    static int get1()
+    {
+        return 1;
+    }
+
+    int get() const
+    {
+        return this->num;
+    }
+
+private:
+    int num = 0;
+};
+
+class CxxClass2 : public CxxClass
+{
+    CxxClass2()
+    {}
+
+    virtual ~CxxClass2()
+    {}
+};
+
 const char *cpp_func()
 {
     return "c string";

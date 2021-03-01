@@ -80,6 +80,8 @@ int main(string[] args)
         // using "Class instance3;" directly causes a segfault
         auto instance3 = scoped!Class;
         instance3.publicMethod();
+        auto instance4 = scoped!Class2;
+        instance4.publicMethod();
     }
     writeln("---");
 

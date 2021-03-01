@@ -35,3 +35,16 @@ private:
         writeln("private method called");
     }
 }
+
+class Class2 : Class
+{
+public:
+    this()
+    {}
+
+    override void publicMethod() const
+    {
+        writeln("overridden public method called", this.number);
+        this.privateMethod();
+    }
+}
