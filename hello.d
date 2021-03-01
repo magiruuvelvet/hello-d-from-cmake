@@ -120,10 +120,15 @@ int main(string[] args)
     writeln("---");
 
     // operator overloading
-    writeln(cl == new ImplementedAbstractClass());
+    writeln(cl == new ImplementedAbstractClass()); // true, uses operator
     cl.num = 1;
-    writeln(cl == new ImplementedAbstractClass());
-    writeln(cl == cl);
+    writeln(cl == new ImplementedAbstractClass()); // false, uses operator
+    writeln(cl == cl);                             // true, not using operator why?
+    auto cl1 = scoped!ImplementedAbstractClass();
+    cl1.num = 1;
+    auto cl2 = scoped!ImplementedAbstractClass();
+    cl2.num = 1;
+    writeln(cl1 == cl2);                           // true, not using operator why?
 
     // unicode (utf-8) check
     writeln("日本語は楽しいです。");

@@ -32,6 +32,7 @@ I made this table mainly for myself as cheat sheet.
 | Constructor Name             | Equals class name                | `this()`                         |
 | Destructors                  | Yes, `~ClassName()`              | Yes, `~this()`                   |
 | Destructor automatically called when out of scope? | Yes        | Yes and No`??` (Garbage Collector) |
+| Delete default constructor   | Yes, `ClassName() = delete`      | Yes, `@disable this()`           |
 | Templates                    | Yes                              | Yes                              |
 | Templates with variadic args | Yes                              | Yes                              |
 | Variadic args                | Yes                              | `??`                             |
