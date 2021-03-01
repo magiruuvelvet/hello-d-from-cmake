@@ -117,6 +117,17 @@ int main(string[] args)
     auto pl2 = cast(AbstractClass)cl;
     pl2.method();
 
+    writeln("---");
+
+    // operator overloading
+    writeln(cl == new ImplementedAbstractClass());
+    cl.num = 1;
+    writeln(cl == new ImplementedAbstractClass());
+    writeln(cl == cl);
+
+    // unicode (utf-8) check
+    writeln("日本語は楽しいです。");
+
 
     writeln("\ngoodby");
     // there should be only 1 destructor call after main returns in this example

@@ -32,5 +32,9 @@ class Implementation : Interface
 
 class ImplementedAbstractClass : AbstractClass
 {
+public:
+    bool opEquals(const ImplementedAbstractClass other) const
+    { return this.num == other.num; }
 
+    int num = 0;
 }
