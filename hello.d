@@ -113,6 +113,10 @@ int main(string[] args)
     auto cl = scoped!ImplementedAbstractClass;
     cl.method();
 
+    // testing if abstract classes can be cast back to as interfaces
+    auto pl2 = cast(AbstractClass)cl;
+    pl2.method();
+
 
     writeln("\ngoodby");
     // there should be only 1 destructor call after main returns in this example
