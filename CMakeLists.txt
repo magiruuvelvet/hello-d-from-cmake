@@ -15,6 +15,7 @@ add_executable(hello
     interop2.d
     Class.d
     Template.d
+    Interface.d
 )
 
 # required for module imports

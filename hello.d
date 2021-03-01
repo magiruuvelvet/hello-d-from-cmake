@@ -8,6 +8,7 @@ static import interop2;
 
 import Class;
 import Template;
+import Interface;
 
 // rename imports
 // import renamed = module.to.import;
@@ -96,6 +97,21 @@ int main(string[] args)
     auto c = scoped!(TemplatedClass!string)("hello");
     c.modifyVariable("changed");
     writeln(c.getVariable());
+
+    auto f = scoped!Implementation;
+    f.someFunction();
+    f.extraFunction();
+
+    // testing if this works as in C++, except that C++ is using "something() = 0" instead of "interface" for abstract classes
+    auto pol = cast(Interface)f;
+    pol.someFunction();
+    //pol.extraFunction(); // error as expected
+
+    //auto f2 = new Interface(); // error as expected
+
+    // so there are "abstract classes" and "interfaces" in D :thinking:
+    auto cl = scoped!ImplementedAbstractClass;
+    cl.method();
 
 
     writeln("\ngoodby");
