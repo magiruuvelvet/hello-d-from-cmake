@@ -1,4 +1,6 @@
 import std.stdio;
+import std.string;
+import cstdio = core.stdc.stdio;
 import std.typecons : scoped;
 import fs = std.file;
 
@@ -123,15 +125,17 @@ int main(string[] args)
     writeln(cl == new ImplementedAbstractClass()); // true, uses operator
     cl.num = 1;
     writeln(cl == new ImplementedAbstractClass()); // false, uses operator
-    writeln(cl == cl);                             // true, not using operator why?
+    //writeln(cl == cl);                             // true, not using operator why?, this line makes valgrind go brrrr
     auto cl1 = scoped!ImplementedAbstractClass();
     cl1.num = 1;
     auto cl2 = scoped!ImplementedAbstractClass();
     cl2.num = 1;
-    writeln(cl1 == cl2);                           // true, not using operator why?
+    //writeln(cl1 == cl2);                           // true, not using operator why?, this line makes valgrind go brrrr
 
     // unicode (utf-8) check
     writeln("日本語は楽しいです。");
+
+    cstdio.printf("%s\n", toStringz("D string"));
 
 
     writeln("\ngoodby");
