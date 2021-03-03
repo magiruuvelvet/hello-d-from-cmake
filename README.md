@@ -21,7 +21,7 @@ I made this table mainly for myself as cheat sheet.
 | Multi-paradigm               | Yes                              | Yes                              |
 | Runtime Reflections          | No                               | No`??`                           |
 | Preprocessor                 | Yes                              | No, but has `version()` for compile-time environmental checks |
-| Memory Management            | RAII / Smart Pointer             | Garbage Collector / RAII`??`     |
+| Memory Management            | RAII / Smart Pointer             | Garbage Collector / RAII         |
 | Scopes                       | Yes                              | Yes                              |
 | Function Overloading         | Yes                              | Yes                              |
 | Operator Overloading         | Yes, uses operators              | Yes, uses named functions        |
@@ -35,8 +35,8 @@ I made this table mainly for myself as cheat sheet.
 | Delete default constructor   | Yes, `ClassName() = delete`      | Yes, `@disable this()`           |
 | Templates                    | Yes                              | Yes                              |
 | Templates with variadic args | Yes                              | Yes                              |
-| Variadic args                | Yes                              | `??`                             |
-| Argument forwarding          | Yes                              | `??`                             |
+| Variadic args                | Yes                              | Yes                              |
+| Argument forwarding          | Yes                              | Yes                              |
 | Meta-programming             | Yes                              | Yes                              |
 | `public`/`private`/`protected` | Yes                            | Yes, same syntax as C++          |
 | Build system and dependency management freedom? `*¹` | Yes      | Yes, but optionally has a package manager you don't need to use |
