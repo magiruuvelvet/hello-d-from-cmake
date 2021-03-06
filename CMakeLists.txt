@@ -9,3 +9,4 @@ include(ProjectSetup)
 project(hello D C CXX)
 
 add_subdirectory(src)
+add_subdirectory(lib)
