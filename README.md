@@ -2,13 +2,15 @@
 
 Simple test to use CMake with D.
 
-**Dependencies**:
+~~**Dependencies**:~~
 
- - https://github.com/magiruuvelvet/gentoo-overlay/tree/master/dev-util/cmake-d (package for https://github.com/dcarp/cmake-d)
+ - ~~https://github.com/magiruuvelvet/gentoo-overlay/tree/master/dev-util/cmake-d (package for https://github.com/dcarp/cmake-d)~~
 
 
-In real world applications those CMake files should be added to the project source though,
-because nobody is gonna install those modules globally on their system.
+~~In real world applications those CMake files should be added to the project source though,~~
+~~because nobody is gonna install those modules globally on their system.~~
+
+Superseded using CMake module magic, It worked on my machine even after uninstalling the modules from the system.
 
 
 ## My comparisons of what I figured out so far
