@@ -12,6 +12,23 @@ Simple test to use CMake with D.
 
 Superseded using CMake module magic, It worked on my machine even after uninstalling the modules from the system.
 
+# What is this repo?
+
+```d
+/**
+ * Decided to learn D. No plans yet to use it for an application.
+ * In this example I try to figure out how D manages memory by
+ * reading the docs and getting my hands dirty with some tests,
+ * and compare it to the C++ RAII.
+ *
+ * Also experimenting with C and C++ interoperability by directly
+ * linking the foreign language objects into the same binary.
+ * No plans to try dynamic loading yet.
+ *
+ * I know D has a package manager, but I like CMake and git submodules :)
+ * If I ever do a real D project, don't expect that I use dub for this.
+ */
+```
 
 ## My comparisons of what I figured out so far
 
