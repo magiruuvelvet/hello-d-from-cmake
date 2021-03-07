@@ -4,9 +4,8 @@ set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${CMAKE_CURRENT_LIST_DIR}/cmake/mo
 # register D support
 include(EnableD)
 
-include(ProjectSetup)
-
 project(hello D C CXX)
+include(ProjectSetup)
 
 add_subdirectory(src)
 add_subdirectory(lib)
