@@ -70,3 +70,6 @@ I made this table mainly for myself as cheat sheet.
 
 I yet need to figure out more about D's memory management. On things I'm unsure or I still
 need to learn/figure out I added a `??`. Table is not complete yet.
+
+
+https://dlang.org/spec/version.html
