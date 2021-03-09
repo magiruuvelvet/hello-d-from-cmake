@@ -36,7 +36,7 @@ private:
     }
 }
 
-class Class2 : Class
+final class Class2 : Class
 {
 public:
     this()

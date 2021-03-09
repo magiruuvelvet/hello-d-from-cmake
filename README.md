@@ -45,6 +45,7 @@ I made this table mainly for myself as cheat sheet.
 | Function Overloading         | Yes                              | Yes                              |
 | Operator Overloading         | Yes, uses operators              | Yes, uses named functions        |
 | Abstract Classes             | Yes, `method() = 0`              | Yes, `abstract class`            |
+| `final` class                | Yes, `class Name final`          | Yes, `final class Name`          |
 | Interfaces                   | No, use abstract classes         | Yes                              |
 | Polymorphism                 | Yes                              | Yes                              |
 | OOP: `override`              | Yes, after method name           | Yes, before return type          |

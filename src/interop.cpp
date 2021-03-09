@@ -27,7 +27,7 @@ private:
     int num = 0;
 };
 
-class CxxClass2 : public CxxClass
+class CxxClass2 final : public CxxClass
 {
     CxxClass2()
     {}
