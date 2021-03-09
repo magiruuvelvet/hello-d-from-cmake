@@ -49,6 +49,7 @@ I made this table mainly for myself as cheat sheet.
 | Interfaces                   | No, use abstract classes         | Yes                              |
 | Polymorphism                 | Yes                              | Yes                              |
 | OOP: `override`              | Yes, after method name           | Yes, before return type          |
+| virtual and abstract methods | Yes                              | Yes                              |
 | Constructor Name             | Equals class name                | `this()`                         |
 | Destructors                  | Yes, `~ClassName()`              | Yes, `~this()`                   |
 | Destructor automatically called when out of scope? | Yes        | Yes and No`??` (Garbage Collector) |
