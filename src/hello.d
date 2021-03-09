@@ -36,6 +36,15 @@ void main2(string def = "default value")
         writeln("main2 returned, goodby");
     }
 
+    version (MyFeature_Enabled)
+    {
+        writeln("my feature is enabled");
+    }
+    else
+    {
+        writeln("my feature is disabled");
+    }
+
     writeln(def);
 }
 
