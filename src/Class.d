@@ -27,6 +27,8 @@ public:
         this.privateMethod();
     }
 
+    void abc() = 0;
+
 private:
     int number = 0;
 
@@ -46,5 +48,10 @@ public:
     {
         writeln("overridden public method called", this.number);
         this.privateMethod();
+    }
+
+    void abc()
+    {
+
     }
 }
