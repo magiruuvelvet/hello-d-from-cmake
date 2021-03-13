@@ -96,6 +96,8 @@ int main(string[] args)
     {
         auto instance2 = new Class(10);
         instance2.publicMethod();
+        writeln("getNumber:", instance2.getNumber());
+        //instance2.getNumber() = 4;
         // without explicit delete the destructor is called when main() returns
     }
     int instance2 = 0; // scope ended, "instance2" variable name available again to use with different data type (just like in C++)

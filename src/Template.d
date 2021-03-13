@@ -9,7 +9,7 @@ public:
     }
 
     // const method
-    T getVariable() const
+    ref const(T) getVariable() const
     {
         return this.var;
     }

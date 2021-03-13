@@ -27,6 +27,11 @@ public:
         this.privateMethod();
     }
 
+    ref const(int) getNumber() const
+    {
+        return this.number;
+    }
+
     void abc() = 0;
 
 private:

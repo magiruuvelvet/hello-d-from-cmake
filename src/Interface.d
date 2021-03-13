@@ -33,6 +33,9 @@ class Implementation : Interface
 class ImplementedAbstractClass : AbstractClass
 {
 public:
+    override size_t toHash() const @safe pure nothrow
+    { return hashOf(this.num); }
+
     bool opEquals(const ImplementedAbstractClass other) const
     { writeln("cmp"); return this.num == other.num; }
 
