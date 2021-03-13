@@ -50,7 +50,7 @@ void main2(string def = "default value")
     writeln(def);
 }
 
-void call_me(void delegate() lambda)
+pragma(inline) void call_me(void delegate() lambda)
 {
     lambda();
 }

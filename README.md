@@ -61,7 +61,7 @@ I made this table mainly for myself as cheat sheet.
 | Meta-programming             | Yes                              | Yes                              |
 | `public`/`private`/`protected` | Yes                            | Yes, same syntax as C++          |
 | Build system and dependency management freedom? `*¹` | Yes      | Yes, but optionally has a package manager you don't need to use |
-| `inline` keyword             | Yes                              | No                               |
+| `inline` keyword             | Yes                              | No, use `pragma(inline)` instead |
 | lambda functions             | Yes, `[]{}`, `[](args){}`, `[]()->returnType{}` | Yes, `{}`, `(args){}`, `delegate()` |
 
 
