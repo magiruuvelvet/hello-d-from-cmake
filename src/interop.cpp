@@ -12,7 +12,9 @@ public:
 
     static int get1()
     {
-        return 1;
+        return ([]{
+            return 1;
+        })();
     }
 
     int get() const

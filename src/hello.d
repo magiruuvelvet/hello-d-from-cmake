@@ -48,6 +48,16 @@ void main2(string def = "default value")
     writeln(def);
 }
 
+void call_me(void delegate() lambda)
+{
+    lambda();
+}
+
+int call_me_with_args(int delegate(int) lambda, int arg)
+{
+    return lambda(arg) + lambda(arg);
+}
+
 int main(string[] args)
 {
     writeln(args[0]);
@@ -147,6 +157,33 @@ int main(string[] args)
     writeln("日本語は楽しいです。");
 
     cstdio.printf("%s\n", toStringz("D string"));
+
+    // lambda functions
+    call_me(delegate(){
+        writeln("call me 1");
+    });
+    call_me((){
+        writeln("call me 2");
+    });
+    call_me({
+        writeln("call me 3");
+    });
+
+    // lambda function with arguments
+    auto result = call_me_with_args((int c){
+        return c;
+    }, 10);
+    writeln(result); // 20
+
+    result = call_me_with_args((c1){ // datatype not even required
+        return c1 * 2;
+    }, 20);
+    writeln(result); // 80
+
+    result = call_me_with_args(delegate(arg){
+        return 1; // ignore passed argument
+    }, 0);
+    writeln(result); // 2
 
 
     writeln("\ngoodby");
