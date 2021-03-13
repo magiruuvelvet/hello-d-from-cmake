@@ -7,5 +7,7 @@ include(EnableD)
 project(hello D C CXX)
 include(ProjectSetup)
 
+add_subdirectory(libs)
+
 add_subdirectory(src)
 add_subdirectory(lib)

@@ -1,3 +1,9 @@
 [submodule "cmake/modules"]
 	path = cmake/modules
 	url = https://github.com/magiruuvelvet/shared-cmake-modules.git
+[submodule "libs/cerealed"]
+	path = libs/cerealed
+	url = https://github.com/atilaneves/cerealed.git
+[submodule "libs/concepts"]
+	path = libs/concepts
+	url = https://github.com/atilaneves/concepts.git

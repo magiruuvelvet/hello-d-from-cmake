@@ -12,6 +12,8 @@ import Class;
 import Template;
 import Interface;
 
+import cerealed;
+
 // rename imports
 // import renamed = module.to.import;
 
@@ -185,6 +187,10 @@ int main(string[] args)
         return 1; // ignore passed argument
     }, 0);
     writeln(result); // 2
+
+    // testing 3rd party libraries using CMake rather than dub
+    writeln(cerealise(5));
+    assert(cerealise(5) == [0, 0, 0, 5]);
 
 
     writeln("\ngoodby");

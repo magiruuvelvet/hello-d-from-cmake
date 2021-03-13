@@ -6,5 +6,5 @@ d_define_version(hello "MyFeature_Enabled")
 
 target_link_libraries(hello
     PUBLIC "c++"
-    PRIVATE hellolib_cxx hellolib_c
+    PRIVATE hellolib_cxx hellolib_c libs::cerealed
 )
