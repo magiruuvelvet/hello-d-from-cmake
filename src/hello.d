@@ -64,6 +64,7 @@ int main(string[] args)
     writeln("hello world");
     writeln(func.imported_function());
     writeln(func.calc(1, 2));
+    writeln(func.get_data_from_lambda());
 
     writeln(interop.cpp_func2());
 
