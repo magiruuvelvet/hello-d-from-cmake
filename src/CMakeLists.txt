@@ -13,3 +13,8 @@ target_link_libraries(hello
     PUBLIC "c++"
     PRIVATE hellolib_cxx hellolib_c libs::cerealed
 )
+
+set(ENABLE_TESTING OFF CACHE BOOL "Build and run unit tests instead of main application.")
+if (ENABLE_TESTING)
+    target_compile_options(hello PRIVATE "-unittest")
+endif()

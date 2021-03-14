@@ -210,3 +210,9 @@ int main(string[] args)
     // there should be only 1 destructor call after main returns in this example
     return 0;
 }
+
+unittest
+{
+    writeln("running tests...");
+    assert(true);
+}
