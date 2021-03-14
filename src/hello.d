@@ -12,6 +12,8 @@ import Class;
 import Template;
 import Interface;
 
+static import features;
+
 import cerealed;
 
 // rename imports
@@ -199,6 +201,9 @@ int main(string[] args)
     // testing 3rd party libraries using CMake rather than dub
     writeln(cerealise(5));
     assert(cerealise(5) == [0, 0, 0, 5]);
+
+    // cmake configured value
+    writeln(features.build_system_configured);
 
 
     writeln("\ngoodby");

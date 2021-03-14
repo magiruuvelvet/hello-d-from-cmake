@@ -1,0 +1,3 @@
+module features;
+
+immutable string build_system_configured = "${CUSTOM_VALUE_FROM_CMAKE}";

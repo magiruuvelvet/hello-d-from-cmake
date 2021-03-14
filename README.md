@@ -40,6 +40,7 @@ I made this table mainly for myself as cheat sheet.
 | Multi-paradigm               | Yes                              | Yes                              |
 | Runtime Reflections          | No                               | No`??`                           |
 | Preprocessor                 | Yes                              | No, but has `version()` for compile-time environmental checks |
+| Preprocessor Macros          | Yes, pass in custom values at build time using `-DMYVALUE=123` | `??` (I really hope D can do that, plausible workaround: CMake `configure_file`) |
 | Memory Management            | RAII / Smart Pointer             | Garbage Collector / RAII         |
 | Scopes                       | Yes                              | Yes                              |
 | Function Overloading         | Yes                              | Yes                              |
