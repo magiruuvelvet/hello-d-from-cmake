@@ -50,6 +50,11 @@ void main2(string def = "default value")
     writeln(def);
 }
 
+void main2(string def, int a)
+{
+    writeln(def, a);
+}
+
 pragma(inline) void call_me(void delegate() lambda)
 {
     lambda();
@@ -79,6 +84,7 @@ int main(string[] args)
 
     main2();
     main2("abc");
+    main2("abc", 1);
 
     writeln("---");
     {
