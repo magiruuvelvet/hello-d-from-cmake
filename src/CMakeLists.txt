@@ -4,6 +4,8 @@ CreateTarget(hello EXECUTABLE hello D 2)
 
 d_define_version(hello PRIVATE "MyFeature_Enabled")
 
+d_install_injectors(hello)
+
 # since D has no preprocessor macros, the only way to get in build-system
 # known and configured values is using `configure_file`, really sad
 set(CUSTOM_VALUE_FROM_CMAKE "build system configured value")
