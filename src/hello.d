@@ -11,6 +11,7 @@ static import interop2;
 import Class;
 import Template;
 import Interface;
+static import arrays;
 
 static import features;
 
@@ -204,6 +205,14 @@ int main(string[] args)
 
     // cmake configured value
     writeln(features.build_system_configured);
+
+
+    arrays.arrays();
+    arrays.SomeStruct st;
+    st.a = 0;
+    //st.c = 1; // here we get an error as expected, but instead of saying private, it says doesn't exist???
+    st.setC(2);
+    writeln(st);
 
 
     writeln("\ngoodby");

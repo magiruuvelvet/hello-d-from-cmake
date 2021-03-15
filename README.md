@@ -45,6 +45,11 @@ I made this table mainly for myself as cheat sheet.
 | Scopes                       | Yes                              | Yes                              |
 | Function Overloading         | Yes                              | Yes                              |
 | Operator Overloading         | Yes, uses operators              | Yes, uses named functions        |
+| Class                        | Yes, no allocation restrictions  | Yes, HEAP only (`new`) or `scoped!T` |
+| Struct                       | Yes, no allocation restrictions  | Yes, no allocation restrictions  |
+| Class == Struct              | Yes, besides default visibility  | No                               |
+| Default Class Visibility     | `private`                        | `public`                         |
+| Default Struct Visibility    | `public`                         | `public`                         |
 | Abstract Classes             | Yes, `method() = 0`              | Yes, `abstract class`            |
 | `final` class                | Yes, `class Name final`          | Yes, `final class Name`          |
 | Interfaces                   | No, use abstract classes         | Yes                              |
@@ -67,6 +72,11 @@ I made this table mainly for myself as cheat sheet.
 
 
 `*¹`: The programming language doesn't force you to use a specific ecosystem like *cough*Go*cough*.
+
+<br>
+
+About **Modules**: you can freely access `private` class/struct members inside the same module which declared it.
+Watch out for stupid bugs, because the compiler didn't yell about `private`.
 
 <br>
 
