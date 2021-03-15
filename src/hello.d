@@ -214,6 +214,11 @@ int main(string[] args)
     st.setC(2);
     writeln(st);
 
+    // just testing something with strings
+    //'should fail'; // it does, thanks :)
+    cast(void)"should work";
+    cast(void)'c';
+
 
     writeln("\ngoodby");
     // there should be only 1 destructor call after main returns in this example
