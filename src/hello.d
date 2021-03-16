@@ -180,6 +180,13 @@ int main(string[] args)
     // unicode (utf-8) check
     writeln("日本語は楽しいです。");
 
+    foreach (char ch; "日本語")
+    { write(ch, ','); } // iterates over bytes, prints garbage
+    writeln();
+    foreach (dchar ch; "日本語")
+    { write(ch, ','); } // iterates over code points, prints '日,本,語,'
+    writeln();
+
     cstdio.printf("%s\n", toStringz("D string"));
 
     // lambda functions
