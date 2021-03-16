@@ -60,3 +60,25 @@ public:
 
     }
 }
+
+struct Struct
+{
+public:
+    this(int value)
+    {
+        this.value = value;
+    }
+
+    ~this()
+    {
+        writeln("~Struct()");
+    }
+
+    ref const(int) getValue() const
+    {
+        return this.value;
+    }
+
+private:
+    int value = 0;
+}

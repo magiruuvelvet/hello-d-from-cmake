@@ -100,6 +100,11 @@ int main(string[] args)
         //instance1.privateMethod(); // error, private method
         //delete instance1; // deprecated
         instance1.destroy();
+
+        Struct struct_;
+        writeln(struct_.getValue());
+        // with structs the destructor is called immediately when out of scope
+        // also stack allocation is possible out of the box without using scoped
     }
     writeln("---");
     {
@@ -108,6 +113,10 @@ int main(string[] args)
         writeln("getNumber:", instance2.getNumber());
         //instance2.getNumber() = 4;
         // without explicit delete the destructor is called when main() returns
+
+        Struct struct_ = 10;
+        writeln(struct_.getValue());
+        // with structs the destructor is called immediately when out of scope
     }
     int instance2 = 0; // scope ended, "instance2" variable name available again to use with different data type (just like in C++)
     writeln("---");
@@ -120,6 +129,7 @@ int main(string[] args)
         auto instance4 = scoped!Class2;
         instance4.publicMethod();
         instance4.abc();
+        // class destructor is called when scoped goes out of scope
     }
     writeln("---");
 
