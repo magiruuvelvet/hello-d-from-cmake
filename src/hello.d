@@ -3,6 +3,8 @@ import std.string;
 import cstdio = core.stdc.stdio;
 import std.typecons : scoped;
 import fs = std.file;
+import std.process : environment, execute;
+alias env = environment;
 
 static import func;
 static import interop;
@@ -12,6 +14,7 @@ import Class;
 import Template;
 import Interface;
 static import arrays;
+import threading;
 
 static import features;
 
@@ -71,6 +74,7 @@ int call_me_with_args(int delegate(int) lambda, int arg)
 int main(string[] args)
 {
     writeln(args[0]);
+    writeln(env.get("HOME", ""));
     writeln("hello world");
     writeln(func.imported_function());
     writeln(func.calc(1, 2));
@@ -235,6 +239,8 @@ int main(string[] args)
     //'should fail'; // it does, thanks :)
     cast(void)"should work";
     cast(void)'c';
+
+    start_threads();
 
 
     writeln("\ngoodby");
