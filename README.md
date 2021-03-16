@@ -85,3 +85,5 @@ need to learn/figure out I added a `??`. Table is not complete yet.
 
 
 https://dlang.org/spec/version.html
+
+https://dlang.org/articles/cpptod.html
