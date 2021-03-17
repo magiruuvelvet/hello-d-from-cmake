@@ -247,6 +247,10 @@ int main(string[] args)
 
     command_tests();
 
+    // template arguments with literal values
+    TemplatedStruct!(int, 10) array;
+    writeln(array.length); // prints 10
+
 
     writeln("\ngoodby");
     // there should be only 1 destructor call after main returns in this example

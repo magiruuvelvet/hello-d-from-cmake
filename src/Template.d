@@ -23,3 +23,14 @@ public:
 private:
     T var;
 }
+
+struct TemplatedStruct(T, size_t S)
+{
+    T[S] attr;
+
+    @property
+    const(size_t) length() const
+    {
+        return this.attr.length;
+    }
+}
