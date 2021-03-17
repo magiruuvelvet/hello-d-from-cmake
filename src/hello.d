@@ -77,6 +77,7 @@ int main(string[] args)
     writeln(args[0]);
     writeln(env.get("HOME", ""));
     writeln("hello world");
+    writefln("%s (%s:%s)", __PRETTY_FUNCTION__, __FILE__, __LINE__);
     writeln(func.imported_function());
     writeln(func.calc(1, 2));
     writeln(func.get_data_from_lambda());

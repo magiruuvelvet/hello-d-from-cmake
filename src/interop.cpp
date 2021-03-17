@@ -50,5 +50,6 @@ int cpp_func2()
 
 void print_string(const char *str)
 {
+    std::printf("%s (%s:%i)\n", __PRETTY_FUNCTION__, __FILE__, __LINE__);
     std::printf("%s\n", str);
 }
