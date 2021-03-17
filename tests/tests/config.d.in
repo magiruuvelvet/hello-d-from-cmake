@@ -1,0 +1,3 @@
+module tests.config;
+
+immutable string AssetDirectory = "${TESTS_ASSET_DIRECTORY}";

@@ -6,7 +6,7 @@ class BasicTest
 
     @Test
     @Tag("BasicTest")
-    public void assertEqualsFailure() @safe pure
+    void assertEqualsFailure() @safe pure
     {
         string expected = "bar";
         string actual = "baz";
@@ -16,7 +16,7 @@ class BasicTest
 
     @Test
     @Tag("BasicTest")
-    public void assertEqualsSuccess() @safe pure
+    void assertEqualsSuccess() @safe pure
     {
         string expected = "bar";
         string actual = "bar";
