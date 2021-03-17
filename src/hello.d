@@ -190,6 +190,8 @@ int main(string[] args)
     foreach (dchar ch; "日本語")
     { write(ch, ','); } // iterates over code points, prints '日,本,語,'
     writeln();
+    writeln("日本語".length); // prints 9
+    writeln("日本語"d.length); // prints 3
 
     cstdio.printf("%s\n", toStringz("D string"));
 
