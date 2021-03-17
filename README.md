@@ -1,6 +1,6 @@
 # Hello D from CMake
 
-Simple test to use CMake with D.
+Learning D as C++20 programmer and using CMake for building.
 
 ~~**Dependencies**:~~
 
@@ -38,9 +38,10 @@ I made this table mainly for myself as cheat sheet.
 |------------------------------|----------------------------------|----------------------------------|
 | Entry Point                  | `int main(...)`                  | `int main(...)` or `void main()` |
 | Multi-paradigm               | Yes                              | Yes                              |
-| Runtime Reflections          | No                               | No`??`                           |
+| Runtime Reflections          | No                               | No                               |
+| Compile-time Reflections     | meta-programming, limited functionality | Yes, has traits and more to make lots of magic possible |
 | Preprocessor                 | Yes                              | No, but has `version()` for compile-time environmental checks |
-| Preprocessor Macros          | Yes, pass in custom values at build time using `-DMYVALUE=123` | `??` (I really hope D can do that, plausible workaround: CMake `configure_file`) |
+| Preprocessor Macros          | Yes, pass in custom values at build time using `-DMYVALUE=123` | No, only way to pass in custom configured values is using CMake `configure_file` magic |
 | Memory Management            | RAII / Smart Pointer             | Garbage Collector / RAII         |
 | Scopes                       | Yes                              | Yes                              |
 | Function Overloading         | Yes                              | Yes                              |
@@ -60,8 +61,13 @@ I made this table mainly for myself as cheat sheet.
 | Destructors                  | Yes, `~ClassName()`              | Yes, `~this()`                   |
 | Destructor automatically called when out of scope? | Yes        | Yes and No`??` (Garbage Collector) |
 | Delete default constructor   | Yes, `ClassName() = delete`      | Yes, `@disable this()`           |
+| Inheritance with classes     | Yes                              | Yes                              |
+| Inheritance with structs     | Yes                              | No (why though?)                 |
 | Templates                    | Yes                              | Yes                              |
 | Templates with variadic args | Yes                              | Yes                              |
+| Template arguments with data types | Yes                        | Yes                              |
+| Template arguments with literal values | Yes                    | Yes                              |
+| Template restrictions (specific data types, etc.) | Yes         | Yes                              |
 | Variadic args                | Yes                              | Yes                              |
 | Argument forwarding          | Yes                              | Yes                              |
 | Meta-programming             | Yes                              | Yes                              |
@@ -70,6 +76,9 @@ I made this table mainly for myself as cheat sheet.
 | `inline` keyword             | Yes                              | No, use `pragma(inline)` instead |
 | lambda functions             | Yes, `[]{}`, `[](args){}`, `[]()->returnType{}` | Yes, `{}`, `(args){}`, `delegate()` |
 | `auto` keyword               | Yes                              | Yes                              |
+| Built-in unit testing        | No                               | Yes                              |
+| Build-in Unicode support     | No                               | Yes, UTF-8/16/32                 |
+| Compile-time expressions     | Yes, `constexpr`, etc.           | Yes, uses `static` for this at some places, like `static if` |
 
 
 `*¹`: The programming language doesn't force you to use a specific ecosystem like *cough*Go*cough*.
@@ -77,7 +86,8 @@ I made this table mainly for myself as cheat sheet.
 <br>
 
 About **Modules**: you can freely access `private` class/struct members inside the same module which declared it.
-Watch out for stupid bugs, because the compiler didn't yell about `private`.
+Watch out for stupid bugs, because the compiler didn't yell about `private`. This feature is supposed to make
+C++ `friend` keyword obsolete, but also can be dangerous if not paying attention. I may or may not like it.
 
 <br>
 
