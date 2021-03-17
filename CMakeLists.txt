@@ -11,3 +11,8 @@ add_subdirectory(libs)
 
 add_subdirectory(src)
 add_subdirectory(lib)
+
+set(ENABLE_TESTING OFF CACHE BOOL "Build unit tests as separate binary.")
+if (ENABLE_TESTING)
+    add_subdirectory(tests)
+endif()

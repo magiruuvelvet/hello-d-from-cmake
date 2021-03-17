@@ -7,3 +7,9 @@
 [submodule "libs/concepts"]
 	path = libs/concepts
 	url = https://github.com/atilaneves/concepts.git
+[submodule "tests/undead"]
+	path = tests/undead
+	url = https://github.com/dlang/undead
+[submodule "tests/dunit"]
+	path = tests/dunit
+	url = https://github.com/linkrope/dunit

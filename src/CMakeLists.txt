@@ -16,7 +16,6 @@ target_link_libraries(hello
     PRIVATE hellolib_cxx hellolib_c libs::cerealed
 )
 
-set(ENABLE_TESTING OFF CACHE BOOL "Build unit tests as separate binary.")
 if (ENABLE_TESTING)
     # this is a mess, but when writing libraries
     # unit testing in D is as easy as creating a executable target
