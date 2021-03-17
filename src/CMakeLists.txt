@@ -22,6 +22,9 @@ if (ENABLE_TESTING)
     # unit testing in D is as easy as creating a executable target
     # and compiling it with the -unittest argument
     # no separate unit testing framework required as in C++
+    # sidenote: writing manual unit tests without -unittest may still make
+    #           sense when a specific output is desired and more control
+    #           over unit tests is needed
     CreateTarget(hello-tests EXECUTABLE hello-tests D 2)
     d_define_version(hello-tests PRIVATE "MyFeature_Enabled")
     d_install_injectors(hello-tests)

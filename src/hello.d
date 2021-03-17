@@ -255,3 +255,11 @@ unittest
     writeln("running tests...");
     assert(true);
 }
+
+unittest
+{
+    // prints cryptic crap to console (it's actually just the backtrace, but it's way too long),
+    // manual unit testing like in C++ may still be desired in some cases when a more human-friendly
+    // output is desired and printing miles long backtraces just makes no sense
+    //assert(false);
+}
