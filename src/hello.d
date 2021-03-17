@@ -15,6 +15,7 @@ import Template;
 import Interface;
 static import arrays;
 import threading;
+import process;
 
 static import features;
 
@@ -243,6 +244,8 @@ int main(string[] args)
     cast(void)'c';
 
     start_threads();
+
+    command_tests();
 
 
     writeln("\ngoodby");
