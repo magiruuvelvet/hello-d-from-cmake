@@ -81,6 +81,29 @@ void about_pointers()
     writeln(msgptr ? "not null" : "null"); // null
     msgptr = &msg;
     writeln(msgptr ? "not null" : "null"); // not null
+    writeln(msgptr.length); // 3, string.length called, there is no separate -> operator like in C++
+    msgptr = null;
+    //writeln(msgptr.length); // segmentation fault, weirdly glad this is possible in D
+        // i like programming languages which don't try to babysit you too hard and let you shot yourself in the foot
+
+    // apparently in D arrays can be "null" too
+    // but length can still be used safely and returns 0
+    // empty arrays are false
+    // empty strings are true
+
+    string msg2 = null;
+    writeln(msg2 ? "not null" : "null"); // null
+    msg2 = "msg";
+    writeln(msg2 ? "not null" : "null"); // not null
+    msg2 = "";
+    writeln(msg2 ? "not null" : "null"); // not null
+
+    int[] array = null;
+    writeln(array ? "not null" : "null", array.length); // null 0
+    array = [];
+    writeln(array ? "not null" : "null", array.length); // null 0
+    array = [1];
+    writeln(array ? "not null" : "null", array.length); // not null 1
 }
 
 int main(string[] args)
