@@ -72,12 +72,23 @@ int call_me_with_args(int delegate(int) lambda, int arg)
     return lambda(arg) + lambda(arg);
 }
 
+void about_pointers()
+{
+    // null pointers are false when used as boolean
+
+    string msg = "msg";
+    string *msgptr = null;
+    writeln(msgptr ? "not null" : "null"); // null
+    msgptr = &msg;
+    writeln(msgptr ? "not null" : "null"); // not null
+}
+
 int main(string[] args)
 {
     writeln(args[0]);
     writeln(env.get("HOME", ""));
     writeln("hello world");
-    writefln("%s (%s:%s)", __PRETTY_FUNCTION__, __FILE__, __LINE__);
+    writefln("%s, %s (%s:%s)", __PRETTY_FUNCTION__, __FUNCTION__, __FILE__, __LINE__);
     writeln(func.imported_function());
     writeln(func.calc(1, 2));
     writeln(func.get_data_from_lambda());
@@ -251,6 +262,8 @@ int main(string[] args)
     // template arguments with literal values
     TemplatedStruct!(int, 10) array;
     writeln(array.length); // prints 10
+
+    about_pointers();
 
 
     writeln("\ngoodby");
