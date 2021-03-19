@@ -1,6 +1,6 @@
 module interop;
 
-extern (C++)
+extern (C++) nothrow @nogc @system
 {
     char *cpp_func();
     int cpp_func2();
