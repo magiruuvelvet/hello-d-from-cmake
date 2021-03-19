@@ -24,6 +24,11 @@ import cerealed;
 // rename imports
 // import renamed = module.to.import;
 
+shared static this()
+{
+    writeln("hello global state init");
+}
+
 /**
  * Decided to learn D. No plans yet to use it for an application.
  * In this example I try to figure out how D manages memory by
@@ -128,6 +133,7 @@ int main(string[] args)
     main2();
     main2("abc");
     main2("abc", 1);
+    func.recursive_import_test();
 
     writeln("---");
     {
