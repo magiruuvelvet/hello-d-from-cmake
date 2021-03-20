@@ -74,7 +74,8 @@ I made this table mainly for myself as cheat sheet.
 | `public`/`private`/`protected` | Yes                            | Yes, same syntax as C++          |
 | Build system and dependency management freedom? `*¹` | Yes      | Yes, but optionally has a package manager you don't need to use |
 | `inline` keyword             | Yes                              | No, use `pragma(inline)` instead |
-| lambda functions             | Yes, `[]{}`, `[](args){}`, `[]()->returnType{}` | Yes, `{}`, `(args){}`, `delegate()` |
+| lambda functions             | Yes, `[]{}`, `[](args){}`, `[]()->returnType{}` | Yes, `{}`, `(args){}`, `delegate()`, `function()` |
+| lambda capture outer variables | Yes, `[&]`, `[=]`              | `delegate()` is capturing, `function()` is NOT |
 | `auto` keyword               | Yes                              | Yes                              |
 | Built-in unit testing        | No                               | Yes                              |
 | Build-in Unicode support     | No                               | Yes, UTF-8/16/32                 |

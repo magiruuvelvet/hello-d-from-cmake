@@ -16,6 +16,7 @@ import Interface;
 static import arrays;
 import threading;
 import process;
+import lambdas;
 
 static import features;
 
@@ -293,6 +294,7 @@ int main(string[] args)
     writeln(array.length); // prints 10
 
     about_pointers();
+    test_lambda_functions();
 
 
     writeln("\ngoodby");
