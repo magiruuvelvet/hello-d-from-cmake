@@ -3,11 +3,22 @@ module func;
 // causes cyclic module error when built with CMake
 // this makes huge frameworks like hunt-framework impossible to use
 // with CMake, because only dub is supported and it works there :(
-// shared static this()
-// {
-//     import std.stdio;
-//     writeln("func global state init");
-// }
+//
+// found a workaround by reading the language reference again: --DRT-oncycle=ignore
+// the behavior when using this is undefined and the order of construction/destruction
+// is no longer guaranteed as defined by the spec, when using this workaround ensure
+// each module has only one constructor/destructor, and even then it still may fail
+shared static this()
+{
+    import std.stdio;
+    writeln("func global state init");
+}
+
+shared static ~this()
+{
+    import std.stdio;
+    writeln("func global state deinit");
+}
 
 string imported_function()
 {

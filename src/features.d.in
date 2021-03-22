@@ -1,3 +1,7 @@
 module features;
 
 immutable string build_system_configured = "${CUSTOM_VALUE_FROM_CMAKE}";
+
+// ignore cyclic module constructor/destructor errors, undefined behavior
+// but works in this small example application as I'm only printing text
+extern(C) __gshared string[] rt_options = [ "oncycle=ignore" ];

@@ -30,6 +30,11 @@ shared static this()
     writeln("hello global state init");
 }
 
+shared static ~this()
+{
+    writeln("hello global state deinit");
+}
+
 /**
  * Decided to learn D. No plans yet to use it for an application.
  * In this example I try to figure out how D manages memory by
