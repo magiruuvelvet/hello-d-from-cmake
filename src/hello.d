@@ -301,6 +301,8 @@ int main(string[] args)
     about_pointers();
     test_lambda_functions();
 
+    func.call_forward_declared();
+
 
     writeln("\ngoodby");
     // there should be only 1 destructor call after main returns in this example

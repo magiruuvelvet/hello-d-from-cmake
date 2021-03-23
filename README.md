@@ -80,6 +80,7 @@ I made this table mainly for myself as cheat sheet.
 | Built-in unit testing        | No                               | Yes                              |
 | Build-in Unicode support     | No                               | Yes, UTF-8/16/32                 |
 | Compile-time expressions     | Yes, `constexpr`, etc.           | Yes, uses `static` for this at some places, like `static if` |
+| Customizable name mangling   | No                               | Yes, `pragma(mangle, "name")`    |
 
 
 `*¹`: The programming language doesn't force you to use a specific ecosystem like *cough*Go*cough*.

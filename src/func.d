@@ -47,3 +47,15 @@ void recursive_import_test()
     // message at startup
     main2("recursive import");
 }
+
+// call function from another module without importing it
+// forward declarations generally work in D, but the module name is part of the symbol
+// so you end up with a linker error unless the name mangling is customized
+pragma(mangle, "_Dforward_declared_across_module")
+extern (D) string forward_declared_across_module(string param);
+
+void call_forward_declared()
+{
+    import std.stdio;
+    writeln(forward_declared_across_module("hello"));
+}
