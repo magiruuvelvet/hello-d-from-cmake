@@ -59,3 +59,10 @@ void call_forward_declared()
     import std.stdio;
     writeln(forward_declared_across_module("hello"));
 }
+
+void di_test()
+{
+    import internal.lib;
+
+    public_function();
+}

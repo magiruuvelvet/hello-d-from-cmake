@@ -120,6 +120,7 @@ void about_pointers()
 int main(string[] args)
 {
     writeln(args[0]);
+    if (args.length > 1) writeln(args[1]);
     writeln(env.get("HOME", ""));
     writeln("hello world");
     writefln("%s, %s (%s:%s)", __PRETTY_FUNCTION__, __FUNCTION__, __FILE__, __LINE__);
@@ -302,6 +303,7 @@ int main(string[] args)
     test_lambda_functions();
 
     func.call_forward_declared();
+    func.di_test();
 
 
     writeln("\ngoodby");
