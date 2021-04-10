@@ -6,6 +6,8 @@ import fs = std.file;
 import std.process : environment, execute;
 alias env = environment;
 
+import sig = core.stdc.signal;
+
 static import func;
 static import interop;
 static import interop2;
@@ -33,6 +35,26 @@ shared static this()
 shared static ~this()
 {
     writeln("hello global state deinit");
+}
+
+// declaring our own signal function which accepts D functions
+extern (C) void signal(int, void function(int));
+// signal handler which can call D functions
+extern (C) void sighandler(int)
+{
+    // calling a D function from UNIX signal handler
+    writeln("got signal");
+
+    // even exceptions are possible as long as they are catched
+    // otherwise a segmentation fault happens
+    try
+    {
+        throw new Exception("");
+    }
+    catch (Exception)
+    {
+        writeln("thrown and catched D exception inside UNIX signal handler");
+    }
 }
 
 /**
@@ -119,6 +141,10 @@ void about_pointers()
 
 int main(string[] args)
 {
+    // tricking D to use actual D and not BetterC inside signal handlers
+    // works perfectly fine in C++ too, so why not D?
+    signal(sig.SIGINT, &sighandler);
+
     writeln(args[0]);
     if (args.length > 1) writeln(args[1]);
     writeln(env.get("HOME", ""));
@@ -304,6 +330,9 @@ int main(string[] args)
 
     func.call_forward_declared();
     func.di_test();
+
+    // testing sigint
+    // readln();
 
 
     writeln("\ngoodby");
